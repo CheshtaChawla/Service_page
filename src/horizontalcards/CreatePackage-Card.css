@@ -1,0 +1,55 @@
+.createcard {
+    display: block;
+    flex-direction: column;
+    border: 0px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;  
+    width: 95%;
+    
+    top: 400px;
+    /* margin-top: 450px; */
+    position: relative;
+    /* overflow: hidden; */
+    background-color: #982372;
+  }
+  .horizontalcard{
+    padding-top: 50px;
+    padding-left: 5%;
+    /* padding-right: 50px; */
+  }
+  .createcard-image{
+    /* display: ; */
+    /* flex-direction: row; */
+    margin-top: 0px;
+    margin-right: 0px;
+    width: 30%;
+    /* Height of the image is not taking values in percentage */
+    height: 220px;
+    /* overflow: hidden; */
+    float: right;
+    clear: left;
+    margin-left: 10px;
+  }
+  .createtitleRow{
+    color: white;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 3rem;
+    margin-left: 10px;
+  }
+  .createdescription{
+    color: white;
+    font-family: 'Inter';
+    font-weight: 200;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  .createbutton{
+    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    color: purple;
+    text-decoration: none;
+  }
+  /* my doubt now is how to give difeerent background color between these two horizontal cards and why the second image of free consultation is not properly loaded*/

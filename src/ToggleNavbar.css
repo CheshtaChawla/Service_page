@@ -1,0 +1,32 @@
+/* 
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-toggle {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f0f0f0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .dropdown.open .dropdown-menu {
+    display: block;
+  } */

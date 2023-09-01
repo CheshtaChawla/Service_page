@@ -1,0 +1,14 @@
+.clickbutton{
+  border: 2px solid white;
+  padding:  5px 5px;
+  border-radius: 50px
+}
+.clickbutton .button{
+  z-index: 3;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px; 
+  font-size: 18px;
+  margin: 10px 10px;
+  
+}

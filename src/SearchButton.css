@@ -1,0 +1,9 @@
+.searchbar{
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    border-radius: 78px;
+    left: 15%;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+}

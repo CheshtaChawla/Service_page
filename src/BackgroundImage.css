@@ -1,0 +1,17 @@
+/* .background-image{
+    z-index: 4;
+    width: 100%;
+    
+} */
+.background-image {
+    background-image: url('srcphotos/heroimage.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    z-index: 4;
+  }
+  @media screen and (max-width: 1275px){
+    .background-image{
+        background-size: cover;
+    }
+  }

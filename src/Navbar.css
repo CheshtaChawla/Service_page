@@ -1,0 +1,120 @@
+/* This is the css of Navbar.js file and NavbarMobile.js file */
+.navbar {
+    /* Adjust the transparency to your preference */
+    position: absolute;
+    left: 400px; 
+    justify-content: center;
+    z-index: 1;
+    /* font: Inter; */
+    font-weight: 300;
+    line-height: 29.05px;
+    padding-top: 40px;
+}
+.hamburger {
+  display: none; /* Hide by default on larger screens */
+  cursor: pointer;
+}
+.elements {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  
+}
+/* .open .elements:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open .elements:nth-child(2) {
+  opacity: 0;
+}
+
+.open .elements:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+} */
+@media (max-width: 955px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0; /* Example background color */
+}
+
+.menu.open {
+  display: block;
+}
+  
+  .navbar a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    font-family: 'Inter',sans-serif;
+  }
+  .hamburger-icon {
+    cursor: pointer;
+    display: none;
+  }
+  .line {
+    /* width: 30px;
+    height: 3px; */
+    background-color: #fff;
+    margin: 5px;
+  }
+  .open {
+    transform: rotate(45deg);
+  }
+  .menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #333;
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 755px) {
+    .hamburger-icon {
+      display: flex;
+    } 
+  
+     .menu {
+      display: none;
+    }
+    .navbar a{
+        display: none;
+    }
+    
+  }
+  @media screen and (min-width:955px) and (max-width: 1024px){
+    .navbar{
+      padding-left: 10px;
+    }
+  }
+  /* @media screen and (min-width: 0px) and (max-width: 1276px){
+    .navbar{
+      width: 100%;
+    }
+  } */
+
+
+ 
+  
+
+  

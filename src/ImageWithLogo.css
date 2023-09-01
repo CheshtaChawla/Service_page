@@ -1,0 +1,39 @@
+.image-with-logo-container {
+    position: absolute;
+  }
+  
+  /* .background-image {
+    width: 100%;
+    height: 500px;
+    mask-repeat: none;
+    background-size: 100% ;
+  } */
+  
+  .floating-logo {
+    position: absolute;
+    justify-content: center;
+
+     /* Adjust this value to move the logo up or down */
+    left: 207px; /* Adjust this value to move the logo left or right */
+    /* transform: translate(-50%, -50%); */
+    z-index: 5; /* Make sure the logo is above the background image */
+    height: 60px;
+    width: 70px;
+  }
+
+  @media  (max-width: 750px){
+    .floating-logo{
+        
+      top: 40px; 
+        /* left: 100px; 
+      /* transform: translate(-50%, -50%); */
+    }
+  }
+  @media (min-width: 1276px) {
+    .background-image {
+      width: 112%;
+      /* width=112 pe thik ho reha h */
+      height: 550px;
+      /* backgound-size: 100% auto; */
+    }
+  }
