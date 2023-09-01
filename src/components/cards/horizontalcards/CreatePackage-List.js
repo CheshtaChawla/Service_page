@@ -1,8 +1,8 @@
 import React from "react";
 import "./CreatePackage-List.css";
 import CreatePackageCard from "./CreatePackage-Card";
-import freeconsultation from '../../src/srcphotos/freeconsultation.png'
-import custompackageImage from '../../src/srcphotos/custompackage.png';
+import freeconsultation from '../../../srcphotos/freeconsultation.png'
+import custompackageImage from '../../../srcphotos/custompackage.png';
 const cardData =[
     {title:"Custom Package", description:"Tailor your experience with personalized services. Say goodbye to unnecessary expenses and choose only the services that suit your needs. Enjoy the freedom to pay for exactly what you want, ensuring a truly customized and cost-effective solution for your beauty needs.", imageUrl: custompackageImage},
     {title:"Free Consultation", description:"Tailor your experience with personalized services. Say goodbye to unnecessary expenses and choose only the services that suit your needs. Enjoy the freedom to pay for exactly what you want, ensuring a truly customized and cost-effective solution for your beauty needs.", imageUrl:freeconsultation},
