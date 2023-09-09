@@ -1,21 +1,24 @@
 /* CardList.css */
 .createcard-list {
     display: grid;
-    /* grid-template-columns: repeat(1, minmax(250px, 1fr));  */
-    /* margin: 1% 1% 1% 1%; */
-    /* gap: 50px; */
+    z-index: 1;
+    max-height: 100%;
+    max-width: 100%;
+ 
     align-items: center; /* Center items vertically within the grid cell */
     justify-content: center;
      /* Center items horizontally within the grid cell */
-
+    margin-top: 10px;
  
   }
   
 .createcard-container-wrapper {
   margin: 0px;  /* Equal margin around the container */
+  z-index: 1;
+  
   
 }
-.creatembutton{ 
+/* .createbutton{ 
   background-color: #440bb7;
   justify-content: center;
   margin-top: 10%;
@@ -25,7 +28,7 @@
   font-size: 18px;
   border-radius: 10px;
   border-color: rgba(0, 0, 0, 0);
-}
+} */
 .createtitleRow{
   display: flex;
   flex-direction: row;
@@ -41,9 +44,15 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  color: purple;
+  /* color: purple; */
   /* margin-top: 8px; */
   font-family: 'Inter',sans-serif;
   font-weight: 700;
   font-size: 40%;
 }
+/* .createpackage1{
+  background-color: #9f246c;
+}
+.createpackage2{
+  background-color: #480eb4;
+} */

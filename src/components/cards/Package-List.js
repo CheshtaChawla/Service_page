@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useState } from 'react';
 import PackageCard from "./Package-Card";
 import "./Package-List.css";
 import "../../Style.css";
 
 
-// import custompackageImage from '../../srcphotos/custompackage.png'; 
+
 import custompackageImage1 from '../../srcphotos/custompackage1.png'; 
 import prebridalImage from '../../srcphotos/prebridal.png'; 
-// import BookPackageCardList from './BookPackage-List';
+
 
 const cardData =[
-    {packagename:"Pre-Bridal", packagecategory:"CLASSIC",price:"₹7000/-", mrp:"₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"CLASSIC",price:"₹7000/-", mrp:"₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"CLASSIC",price:"₹7000/-", mrp:"₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"CLASSIC",price:"₹7000/-", mrp:"₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"CLASSIC",price:"₹7000/-", mrp:"₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
+    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
+    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
+    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
+    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
+    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
 ];
 const PackageList =() =>{
  return (  
@@ -25,7 +25,7 @@ const PackageList =() =>{
         <PackageCard className='card1'
         title="CUSTOM PACKAGE"
         description="CREATE YOUR OWN PACKAGE BY CHOOSING SERVICES"
-        imageUrl ={custompackageImage1} customSize={false}  > 
+        imageUrl ={custompackageImage1} customSize={false}>
         <button className='custombutton'> CREATE </button>
         </PackageCard>
         {/* This is the packages list */}
@@ -37,8 +37,10 @@ const PackageList =() =>{
             <div className="name">{data.packagename}</div>
             <div className="category">{data.packagecategory}</div>
             </div>
+            <div>
             <div className="price">{data.price}</div>
             <div className="mrp">{data.mrp}</div>
+            </div>
             </div>
         
         description=<div className="description">

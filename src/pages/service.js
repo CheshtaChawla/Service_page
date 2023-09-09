@@ -28,13 +28,9 @@ function Service() {
   }, []);
   return (
     <div className="app-container">
-       {/* <HeroSection/> */}
-       {/* <div> */}
-       {/* Background image of the hero section */}
-       {/* <img src= "srcphotos/heroimage.png" className="background-image"  alt="Background"  /> */}
-       {/* </div> */}
+    <section>
       <BackgroundHero />
-
+      {/* </section> */}
       {/* <div className='nav'>
       <ImageWithLogo />
       <div>
@@ -42,22 +38,25 @@ function Service() {
       </div>
       </div> */}
 
-      <div className="nav-and-logo">
+      {/* <div className="nav-and-logo">
         {viewportWidth < 750 ? <NavbarMobile /> : <Navbar />}
         <ImageWithLogo />
-      </div>
+      </div> */}
 
       <section className='heading'>
-       <h1>Choose your package</h1>
-      </section>
+       <h1 >Choose your package</h1>
+      {/* </section>
       
-      <section className='App'>
+      <section className='App'> */}
       <Button />
       </section>
   
       <PackageCardList />
+      </section>
+      <section>
       <CreatePackageList />
-      {/* <WebsiteFooter /> */}
+      </section>
+     
     </div>
     
    

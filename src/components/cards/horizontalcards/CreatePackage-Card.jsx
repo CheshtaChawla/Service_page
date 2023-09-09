@@ -13,8 +13,6 @@ const CreatePackageCard = ({ title, description, imageUrl, customBackground ,chi
         <h2 className="createcard-title">{title}</h2>
         <p className="createcard-description">{description}</p>
         {children}
-        
-        
       </div>
     </div>
   </div>

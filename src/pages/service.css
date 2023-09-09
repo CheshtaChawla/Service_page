@@ -5,29 +5,26 @@
   .App {
     text-align: center;
   }
-  .nav{
+  /* .nav{
     padding-top: 5%;
     padding-left: 1%;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* Your CSS file */
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: space-between; /* Space out components */
-  }
+    align-items: center; 
+    justify-content: space-between; 
+  } */
   
-  @media screen and (max-width: 955px){
+  /* @media screen and (max-width: 955px){
     .navbar{
       padding-left: 150px;
     }
-    /* .nav{
+    .nav{
       left: 100px;
-    } */
+    }
     .floating-logo{
       left: 100px;
     }
-  }
-  @media screen and (max-width: 805px){
+  } */
+  /* @media screen and (max-width: 805px){
     .navbar{
     width: 90%;
     }
@@ -35,17 +32,18 @@
   .App-logo {
     height: 40vmin;
     pointer-events: none;
-  }
+  } */
   .heading{
+    position: absolute;
     color: white;
     justify-content: center;
+    
     font-size: 150%;
-    /* font-weight: 100; */
     position: absolute;
     z-index: 2;
     line-height: 20px;
-    top: 30%;
-    left: 45%;
+    top: 10%;
+    left: 35%;
     font-Family: 'Bellefair';
   }
   h1{
@@ -53,63 +51,32 @@
     text-align: center;
     color: white;
   }
-  .App{
+  /* .App{
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     top: 40%;
     left: 42%;
-  }
+  } */
   .card{
     width: 100%;
     z-index: 3;
     display: flex;
     gap: 0px;
-    position: relative;
-    margin-left: 50px;
-    margin-right: 50px;
+    position: absolute;
+    /* padding-top: 100px; */
+    /* margin-left: 50px;
+    margin-right: 50px; */
     
   }
-  
-  
-  
-  /* @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  } */
-  .background-image{
+
+  /* .background-image{
     z-index: 4;
     width: 100%;
     background-size: cover;
     background-position: center;
-    
-  }
+  } */
   
-  .nav-and-logo {
+  /* .nav-and-logo {
     display: flex;
     align-items: center;
     position: absolute;
@@ -117,5 +84,5 @@
     left: 0;
     width: 100%;
     z-index: 2;
-    padding: 20px; /* Adjust as needed */
-  }
+    padding: 20px; 
+  } */
