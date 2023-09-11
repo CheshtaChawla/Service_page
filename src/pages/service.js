@@ -1,8 +1,8 @@
 import './service.css';
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar/Navbar';
-import NavbarMobile from '../components/navbar/NavbarMobile';
-import ImageWithLogo from '../components/service/ImageWithLogo';
+// import Navbar from '../components/navbar/Navbar';
+// import NavbarMobile from '../components/navbar/NavbarMobile';
+// import ImageWithLogo from '../components/service/ImageWithLogo';
 import '../Style.css';
 import '../components/service/BackgroundImage';
 import Button from '../components/button/Clickable-Button';

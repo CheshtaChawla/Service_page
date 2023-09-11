@@ -1,13 +1,13 @@
 .createcard {
   /* display block is used to keep the image and the content in the same row in the create custom package card */
-    display: block; 
+    display: block  ; 
     flex-direction: column;
     border: 0px solid #ffffff;
     border-radius: 8px;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     margin-top: 15px;
     width: 94%;
-    height: 20rem;
+    height: 25rem;
     /* height: 70%; */
     /* top: 400px; */
     /* top=400 se hemara horizontal card are placed at the coreect position from the simple */
@@ -62,7 +62,7 @@
     font-size: 1.2rem;
     color: #982372;
    
-    padding: 10px 40px;
+    padding: 10px 40px;git pull --all
     border-radius: 10px;
     border: none;
   } */
