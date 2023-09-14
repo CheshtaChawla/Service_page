@@ -1,6 +1,6 @@
   import React, { useState } from 'react';
   import styled from 'styled-components';
-  import { Modal } from '../../pop_ups/modal';
+  import { Modal } from '../../pop_ups/Modal';
   // import { GlobalStyle } from './globalStyles';
   import "./CreatePackage-List.css";
   import CreatePackageCard from "./CreatePackage-Card";
@@ -39,7 +39,7 @@
   `;
 
   const CreatePackageList =() =>{
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(true);
 
     const openModal = () => {
       setShowModal(showModal => !showModal);
