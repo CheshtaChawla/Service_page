@@ -11,7 +11,7 @@
     width: 100%;
     z-index: 1;
     position: absolute;
-    display: flex;
+    display: block;    /*initially it was display:flex*/
     flex-direction: column;
     align-items: center;
     justify-content: center;

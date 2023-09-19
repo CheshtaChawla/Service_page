@@ -6,25 +6,47 @@
     grid-template-columns: repeat(1, minmax(25%, 2fr)); 
     top: 0;
     /* margin-top: 25.7%;  */
-    margin-top: 21.7%;
+    /* margin-top: 21.7%; */
     /* this margin-top property is used to to allign the card on the hecls
     ro background image propert */
     gap: 3rem; /* gap property tell us about the gap between the cards of the grid.....THIS IS IMPORTANT FOR THE VERTICAL GAP BETWEEN IN THE VERTICAL CARDS*/
-    /* padding-top: -50px; */
+    padding-top: 342px;
+
+    @media(min-width: 576px) {
+      /* For tablet and larger screens: 2 cards per row */  
+      grid-template-columns: repeat(1, 1fr);
+      /* margin-top: 50%; */
+  
+      
+    }
+    @media(min-width: 768px) {
+      /* For tablet and larger screens: 2 cards per row */  
+      grid-template-columns: repeat(2, 1fr);
+      /* margin-top: 50%; */
+  
+      
+    }
+    @media(min-width: 1024px) {
+      /* For tablet and larger screens: 2 cards per row */  
+      grid-template-columns: repeat(2, 1fr);
+      /* margin-top: 50%; */
+  
+      
+    }
 
   @media(min-width: 1024px) {
     /* For tablet and larger screens: 2 cards per row */  
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     /* margin-top: 50%; */
 
     
   }
-  @media (min-width: 1167px) {
+  /* @media (min-width: 1167px) { */
     /* For desktop and larger screens: 2 cards per row */
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     /* padding-top: 100px; */
    
-  }
+  /* } */
   @media (min-width: 1273px) {
     /* For desktop and larger screens: 3 cards per row */
     grid-template-columns: repeat(3, 1fr);
