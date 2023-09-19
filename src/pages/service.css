@@ -37,15 +37,13 @@
     position: absolute;
     color: white;
     justify-content: center;
-    top: 30%; /* Vertically center the text */
-    left: 50%; /* Horizontally center the text */
-    transform: translate(-50%, -50%); /* Center the text precisely */
+    
     font-size: 150%;
     position: absolute;
     z-index: 2;
     line-height: 20px;
-    /* top: 10%;
-    left: 35%; */
+    top: 10%;
+    left: 35%;
     font-Family: 'Bellefair';
   }
   h1{
@@ -69,9 +67,6 @@
     /* margin-left: 50px;
     margin-right: 50px; */
     
-  }
-  .container{
-    position: relative;
   }
 
   /* .background-image{
