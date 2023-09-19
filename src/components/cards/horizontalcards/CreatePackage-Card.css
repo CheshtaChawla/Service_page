@@ -12,7 +12,7 @@
     /* top: 400px; */
     /* top=400 se hemara horizontal card are placed at the coreect position from the simple */
     position: relative;
-    background: linear-gradient(to left,#F12E2E,#561AA2);
+    /* background: linear-gradient(to left,#F12E2E,#561AA2); */
     z-index: 1;
   }
   .horizontalcard{

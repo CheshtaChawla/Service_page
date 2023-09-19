@@ -2,6 +2,7 @@
   border: 2px solid white;
   padding:  5px 5px;
   border-radius: 50px;
+  width: 370px;
 }
 .clickbutton .button{
   z-index: 3;

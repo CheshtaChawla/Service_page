@@ -8,8 +8,7 @@
     align-items: center; /* Center items vertically within the grid cell */
     justify-content: center;
      /* Center items horizontally within the grid cell */
-    margin-top: 10px;
- 
+    /* margin-top: 10px; */
   }
   
 .createcard-container-wrapper {
