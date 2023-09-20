@@ -1,6 +1,7 @@
   import React, { useState } from 'react';
   import styled from 'styled-components';
-  import { Modal } from '../../pop_ups/Modal';
+  import { Modalss } from '../../pop_ups/Modal';
+
   // import { GlobalStyle } from './globalStyles';
   import "./CreatePackage-List.css";
   import CreatePackageCard from "./CreatePackage-Card";
@@ -39,13 +40,20 @@
   `;
 
   const CreatePackageList =() =>{
-    const [showModal, setShowModal] = useState(true);
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const toggleModal = () => {
+      setModalOpen(!isModalOpen);
+      setShowModal(showModal => !showModal);
+    };
+    const [showModal, setShowModal] = useState(false);
 
     const openModal = () => {
       setShowModal(showModal => !showModal);
+      setModalOpen(!isModalOpen);
     };
   return(
-    <div className="createcard-container-wrapper">
+    <div className="createcard-container-wrapper" style={{zIndex:-1000}}>
       <div className="createcard-list">
         {/* This is the packages list */}
         {cardData1.map((data, index) => <div>
@@ -55,8 +63,9 @@
             description=<div className="createdescription">{data.description}</div>
             imageUrl={custompackageImage}>
             <div>
-            <Button onClick={Modal}>Create</Button>
-            <Modal showModal={showModal} setShowModal={setShowModal} />
+            <Button onClick={openModal}>Create</Button>
+           
+            <Modalss showModal={showModal} setShowModal={setShowModal} isModalOpen={isModalOpen} toggleModal={toggleModal} setModalOpen={setModalOpen}/>
             {/* <GlobalStyle /> */}
             </div>
           </CreatePackageCard>

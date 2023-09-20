@@ -1,6 +1,9 @@
 import React from 'react';
 import Service from './pages/service';
-import { Modal } from './components/pop_ups/Modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
+// import { Modals } from './components/pop_ups/Modal';
 
 const PopupContent = ({ onClose }) => {
   return (
@@ -55,8 +58,8 @@ const PopupContent = ({ onClose }) => {
           <button style={{ backgroundColor: 'white', paddingTop: '5px', paddingBottom: '5px', paddingLeft: '15px', paddingRight: '15px', float:'right' }}>Book</button>
         </div>
       </div>
-      <Modal />
-      <button onClick={onClose}>Close</button>
+      {/* <Modals /> */}
+      <button onClick={onClose} style={{position:'absolute', top:'-35px', right:'0', borderRadius:'100%', height:'28px', width:'28px', display:'flex', justifyContent:'center' , alignItems:'center'}}><FontAwesomeIcon icon={faXmark} size='lg'/></button>
     </div>
   );
 };

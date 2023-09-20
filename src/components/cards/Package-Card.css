@@ -15,10 +15,11 @@
   flex: 1; /* This will make the card content take up the remaining space */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 0px;
+
   }
   .card-content h2{
     padding: 0px;

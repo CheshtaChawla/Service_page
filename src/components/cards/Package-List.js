@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import PackageCard from "./Package-Card";
 import "./Package-List.css";
 import "../../Style.css";
-
-
-
 import custompackageImage1 from '../../srcphotos/custompackage1.png'; 
 import prebridalImage from '../../srcphotos/prebridal.png'; 
+
+import Modal from 'react-modal';
+
+import PackagePopUpContent from '../../PackagePopUpContent';
+Modal.setAppElement('#root');
 
 
 const cardData =[
@@ -17,9 +19,15 @@ const cardData =[
     {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
 ];
 const PackageList =() =>{
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [idxx, setIdxx] = useState(1);
+  const toggleModal = (idx) => {
+    setModalOpen(!isModalOpen);
+    setIdxx(()=>idx)
+  };
  return (  
 
-    <div className="card-container-wrapper">
+    <div className="card-container-wrapper" style={{zIndex:1}}>
     <div className="card-list">
         {/* This is custom package card */}
         <PackageCard className='card1'
@@ -60,7 +68,7 @@ const PackageList =() =>{
         imageUrl={prebridalImage}  customSize={true}>
         <div className="combinebutton">
         <button className='viewbutton'><u>VIEW DETAILS</u></button>
-        <button className='bookbutton'>BOOK</button>
+        <button className='bookbutton' onClick={()=>toggleModal(index)}>BOOK</button>
         </div>
         </PackageCard>
      
@@ -74,25 +82,34 @@ const PackageList =() =>{
         
         {/* <div>
          <PackageCard className='card2' 
-          title="Card 2"
-          description="This is the content of Card 2."
-          imageUrl={prebridalImage}  customSize={true}>
-          <button className='viewbutton'>VIEW DETAILS</button>
-          <button className='bookbutton'>BOOK</button>
-        </PackageCard>
-        </div>
-
-        <div>
-        <PackageCard className='card3'
-        title="Card 3"
-        description="This is the content of Card 3."
-        imageUrl={prebridalImage}  customSize={true}>
-        <button className='viewbutton'>VIEW DETAILS</button>
-        <button className='bookbutton'>BOOK</button>
-        </PackageCard>
-     
-      
+         title="Card 2"
+         description="This is the content of Card 2."
+         imageUrl={prebridalImage}  customSize={true}>
+         <button className='viewbutton'>VIEW DETAILS</button>
+         <button className='bookbutton'>BOOK</button>
+         </PackageCard>
+         </div>
+         
+         <div>
+         <PackageCard className='card3'
+         title="Card 3"
+         description="This is the content of Card 3."
+         imageUrl={prebridalImage}  customSize={true}>
+         <button className='viewbutton'>VIEW DETAILS</button>
+         <button className='bookbutton'>BOOK</button>
+         </PackageCard>
+         
+         
         </div> */}
+        <Modal
+        isOpen={isModalOpen}
+        onRequestClose={()=>toggleModal(idxx)}
+        contentLabel="Popup Modal"
+        className="Package-popup-modal"
+        overlayClassName="popup-overlay"
+      >
+        <PackagePopUpContent onClose={()=>toggleModal(idxx)} cardData={cardData} idxx={idxx}/>
+      </Modal>
     </div>
     </div>
     );

@@ -1,8 +1,10 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback,useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
+import Modal from 'react-modal';
 import { MdClose } from 'react-icons/md';
-
+import PopupContent from '../../PopupContent';
+Modal.setAppElement('#root');
 const Background = styled.div`
   width: 100%;
   height: 100%;
@@ -64,7 +66,9 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 
-export const Modal = ({ showModal, setShowModal }) => {
+export const Modalss = ({ showModal, setShowModal, toggleModal, isModalOpen }) => {
+  {console.log(isModalOpen, showModal)}
+
   const modalRef = useRef();
 
   const animation = useSpring({
@@ -102,22 +106,36 @@ export const Modal = ({ showModal, setShowModal }) => {
   return (
     <>
       {showModal ? (
-        <Background onClick={closeModal} ref={modalRef}>
-          <animated.div style={animation}>
-            <ModalWrapper showModal={showModal}>
-              {/* <ModalImg src={require('./modal.jpg')} alt='camera' /> */}
-              <ModalContent>
-                <h1>Are you ready?</h1>
-                <p>Get exclusive access to our next launch.</p>
-                <button>Join Now</button>
-              </ModalContent>
-              <CloseModalButton
-                aria-label='Close modal'
-                onClick={() => setShowModal(prev => !prev)}
-              />
-            </ModalWrapper>
-          </animated.div>
-        </Background>
+        // <Background onClick={closeModal} ref={modalRef}>
+        //   <animated.div style={animation}>
+        //     <ModalWrapper showModal={showModal}>
+        //       {/* <ModalImg src={require('./modal.jpg')} alt='camera' /> */}
+        //       <ModalContent>
+        //         <h1>Are you ready?</h1>
+        //         <p>Get exclusive access to our next launch.</p>
+        //         <button>Join Now</button>
+        //       </ModalContent>
+        //       <CloseModalButton
+        //         aria-label='Close modal'
+        //         onClick={() => setShowModal(prev => !prev)}
+        //       />
+        //     </ModalWrapper>
+        //   </animated.div>
+        // </Background>
+        <>
+        
+        <Modal
+        isOpen={isModalOpen}
+        onRequestClose={toggleModal}
+        contentLabel="Popup Modal"
+        className="popup-modal"
+        overlayClassName="popup-overlay"
+      >
+        <PopupContent onClose={toggleModal} />
+      </Modal>
+
+       
+        </>
       ) : null}
     </>
   );
