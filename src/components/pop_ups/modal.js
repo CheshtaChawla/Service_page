@@ -67,8 +67,6 @@ const CloseModalButton = styled(MdClose)`
 `;
 
 export const Modalss = ({ showModal, setShowModal, toggleModal, isModalOpen }) => {
-  {console.log(isModalOpen, showModal)}
-
   const modalRef = useRef();
 
   const animation = useSpring({

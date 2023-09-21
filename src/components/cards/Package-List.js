@@ -1,85 +1,199 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import PackageCard from "./Package-Card";
 import "./Package-List.css";
 import "../../Style.css";
-import custompackageImage1 from '../../srcphotos/custompackage1.png'; 
-import prebridalImage from '../../srcphotos/prebridal.png'; 
+import custompackageImage1 from "../../srcphotos/custompackage1.png";
+import prebridalImage from "../../srcphotos/prebridal.png";
 
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
-import PackagePopUpContent from '../../PackagePopUpContent';
-Modal.setAppElement('#root');
+import PackagePopUpContent from "../../PackagePopUpContent";
+import PopupContent from "../../PopupContent";
+Modal.setAppElement("#root");
 
-
-const cardData =[
-    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
-    {packagename:"Pre-Bridal", packagecategory:"PREMIUM",price:"₹7000/-", mrp:"M.R.P ₹10,000/-", descriptionduration:["Number of seating: 2","Duration of service: 02 hours"] , descriptionservices:["Threading","Hair Spa (loreal/Matrix)","Hair wash + blow dry (Complimentry)","D-Tan/Bleach","Full Body Wax (Chocolate)"], imageUrl:prebridalImage},
+const cardData = [
+  {
+    packagename: "Pre-Bridal",
+    packagecategory: "PREMIUM",
+    price: "₹7000/-",
+    mrp: "M.R.P ₹10,000/-",
+    descriptionduration: [
+      "Number of seating: 2",
+      "Duration of service: 02 hours",
+    ],
+    descriptionservices: [
+      "Threading",
+      "Hair Spa (loreal/Matrix)",
+      "Hair wash + blow dry (Complimentry)",
+      "D-Tan/Bleach",
+      "Full Body Wax (Chocolate)",
+    ],
+    imageUrl: prebridalImage,
+  },
+  {
+    packagename: "Pre-Bridal",
+    packagecategory: "PREMIUM",
+    price: "₹7000/-",
+    mrp: "M.R.P ₹10,000/-",
+    descriptionduration: [
+      "Number of seating: 2",
+      "Duration of service: 02 hours",
+    ],
+    descriptionservices: [
+      "Threading",
+      "Hair Spa (loreal/Matrix)",
+      "Hair wash + blow dry (Complimentry)",
+      "D-Tan/Bleach",
+      "Full Body Wax (Chocolate)",
+    ],
+    imageUrl: prebridalImage,
+  },
+  {
+    packagename: "Pre-Bridal",
+    packagecategory: "PREMIUM",
+    price: "₹7000/-",
+    mrp: "M.R.P ₹10,000/-",
+    descriptionduration: [
+      "Number of seating: 2",
+      "Duration of service: 02 hours",
+    ],
+    descriptionservices: [
+      "Threading",
+      "Hair Spa (loreal/Matrix)",
+      "Hair wash + blow dry (Complimentry)",
+      "D-Tan/Bleach",
+      "Full Body Wax (Chocolate)",
+    ],
+    imageUrl: prebridalImage,
+  },
+  {
+    packagename: "Pre-Bridal",
+    packagecategory: "PREMIUM",
+    price: "₹7000/-",
+    mrp: "M.R.P ₹10,000/-",
+    descriptionduration: [
+      "Number of seating: 2",
+      "Duration of service: 02 hours",
+    ],
+    descriptionservices: [
+      "Threading",
+      "Hair Spa (loreal/Matrix)",
+      "Hair wash + blow dry (Complimentry)",
+      "D-Tan/Bleach",
+      "Full Body Wax (Chocolate)",
+    ],
+    imageUrl: prebridalImage,
+  },
+  {
+    packagename: "Pre-Bridal",
+    packagecategory: "PREMIUM",
+    price: "₹7000/-",
+    mrp: "M.R.P ₹10,000/-",
+    descriptionduration: [
+      "Number of seating: 2",
+      "Duration of service: 02 hours",
+    ],
+    descriptionservices: [
+      "Threading",
+      "Hair Spa (loreal/Matrix)",
+      "Hair wash + blow dry (Complimentry)",
+      "D-Tan/Bleach",
+      "Full Body Wax (Chocolate)",
+    ],
+    imageUrl: prebridalImage,
+  },
 ];
-const PackageList =() =>{
+const PackageList = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [idxx, setIdxx] = useState(1);
   const toggleModal = (idx) => {
     setModalOpen(!isModalOpen);
-    setIdxx(()=>idx)
+    setIdxx(() => idx);
+    setShowModal((showModal) => !showModal);
   };
- return (  
 
-    <div className="card-container-wrapper" style={{zIndex:1}}>
-    <div className="card-list">
+  const openModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+  const [isModalOpen2, setModalOpen2] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+
+  const toggleModal2 = () => {
+    setModalOpen2(!isModalOpen2);
+    setShowModal2((showModal2) => !showModal2);
+  };
+
+  const openModal2 = () => {
+    setModalOpen2(!isModalOpen2);
+  };
+
+  return (
+    <div className="card-container-wrapper" style={{ zIndex: 1 }}>
+      <div className="card-list">
         {/* This is custom package card */}
-        <PackageCard className='card1'
-        title="CUSTOM PACKAGE"
-        description="CREATE YOUR OWN PACKAGE BY CHOOSING SERVICES"
-        imageUrl ={custompackageImage1} customSize={false}>
-        <button className='custombutton'> CREATE </button>
+        <PackageCard
+          className="card1"
+          title="CUSTOM PACKAGE"
+          description="CREATE YOUR OWN PACKAGE BY CHOOSING SERVICES"
+          imageUrl={custompackageImage1}
+          customSize={false}
+        >
+          <button className="custombutton" onClick={openModal2}>
+            {" "}
+            CREATE{" "}
+          </button>
         </PackageCard>
         {/* This is the packages list */}
-        {cardData.map((data,index)=> <div>
-        <PackageCard className='card4'
-        key={index}
-        title= <div className="titleRow">
-            <div>
-            <div className="name">{data.packagename}</div>
-            <div className="category">{data.packagecategory}</div>
-            </div>
-            <div>
-            <div className="price">{data.price}</div>
-            <div className="mrp">{data.mrp}</div>
-            </div>
-            </div>
-        
-        description=<div className="description">
-        <div className="descriptionduration">
-            {data.descriptionduration.map((duration, index) => (
-              <div key={index}>{duration}</div>
-            ))}
-          </div>
-          <div className="descriptionservices">
-            {data.descriptionservices.map((service, index) => (
-              <div key={index}>{service}</div>
-            ))}
-          </div>
-        {/* <div className="descriptionduration">{data.descriptionduration}</div>
+        {cardData.map((data, index) => (
+          <div>
+            <PackageCard
+              className="card4"
+              key={index}
+              title=<div className="titleRow">
+                <div>
+                  <div className="name">{data.packagename}</div>
+                  <div className="category">{data.packagecategory}</div>
+                </div>
+                <div>
+                  <div className="price">{data.price}</div>
+                  <div className="mrp">{data.mrp}</div>
+                </div>
+              </div>
+              description=<div className="description">
+                <div className="descriptionduration">
+                  {data.descriptionduration.map((duration, index) => (
+                    <div key={index}>{duration}</div>
+                  ))}
+                </div>
+                <div className="descriptionservices">
+                  {data.descriptionservices.map((service, index) => (
+                    <div key={index}>{service}</div>
+                  ))}
+                </div>
+                {/* <div className="descriptionduration">{data.descriptionduration}</div>
         <div className="descriptionservices">{data.descriptionservices}</div> */}
-        </div>
-        imageUrl={prebridalImage}  customSize={true}>
-        <div className="combinebutton">
-        <button className='viewbutton'><u>VIEW DETAILS</u></button>
-        <button className='bookbutton' onClick={()=>toggleModal(index)}>BOOK</button>
-        </div>
-        </PackageCard>
-     
-      
-        </div>)}
-        
-        
+              </div>
+              imageUrl={prebridalImage}
+              customSize={true}
+            >
+              <div className="combinebutton">
+                <button className="viewbutton">
+                  <u>VIEW DETAILS</u>
+                </button>
+                <button
+                  className="bookbutton"
+                  onClick={() => toggleModal(index)}
+                >
+                  BOOK
+                </button>
+              </div>
+            </PackageCard>
+          </div>
+        ))}
+
         {/* <BookPackageCardList /> */}
-        
-       
-        
+
         {/* <div>
          <PackageCard className='card2' 
          title="Card 2"
@@ -102,17 +216,30 @@ const PackageList =() =>{
          
         </div> */}
         <Modal
-        isOpen={isModalOpen}
-        onRequestClose={()=>toggleModal(idxx)}
-        contentLabel="Popup Modal"
-        className="Package-popup-modal"
-        overlayClassName="popup-overlay"
-      >
-        <PackagePopUpContent onClose={()=>toggleModal(idxx)} cardData={cardData} idxx={idxx}/>
-      </Modal>
+          isOpen={isModalOpen}
+          onRequestClose={() => toggleModal(idxx)}
+          contentLabel="Popup Modal"
+          className="Package-popup-modal"
+          overlayClassName="popup-overlay"
+        >
+          <PackagePopUpContent
+            onClose={() => toggleModal(idxx)}
+            cardData={cardData}
+            idxx={idxx}
+          />
+        </Modal>
+        <Modal
+          isOpen={isModalOpen2}
+          onRequestClose={toggleModal2}
+          contentLabel="Popup Modal"
+          className="Package-popup-modal"
+          overlayClassName="popup-overlay"
+        >
+          <PopupContent onClose={toggleModal2} />
+        </Modal> 
+      </div>
     </div>
-    </div>
-    );
+  );
 };
 
- export default PackageList;
+export default PackageList;
